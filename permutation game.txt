@@ -1,0 +1,47 @@
+import random
+words=["apple","manipulate","system","Timetable","Country"]
+p1name=input("First player enter your name:")
+p2name=input("Second player enter your name:")
+pp1=0
+pp2=0
+turn=0
+while(1):
+    pickword=random.choice(words)
+    jumbled=list(pickword)
+    random.shuffle(jumbled)
+    jumbledword=''.join(jumbled)
+    print("Your task is:",jumbledword)
+    if turn%2==0:
+        print("Player 1 is your choice")
+        ans=input("Player 1 enter your answer:")
+        if ans==pickword:
+            pp1=pp1+1
+            print("Player 1 your score is increased",pp1)
+        else:
+            print("oh! the correct answeris ",pickword)
+    print("enter 1 to continue or 0 to quit")
+    c= int(input())
+    if c==0:
+        print("Thank you player 1")
+        break
+    else:
+        pickword=random.choice(words)
+        jumbled=list(pickword)
+        random.shuffle(jumbled)
+        jumbledword=''.join(jumbled)
+        print("Your task is:",jumbledword)
+        print("Player 2 is your choice")
+        ans=input("Player 2 enter your answer:")
+        if ans==pickword:
+            pp2=pp2+1
+            print("Player 1 your score is increased",pp2)
+        else:
+            print("oh! the correct answeris ",pickword)
+    
+    print("enter 1 to continue or 0 to quit")
+    c= int(input())
+    if c==0:
+        print("Thank you player 2")
+        break
+    turn=turn+1
+    
